@@ -1,0 +1,325 @@
+/* === 全站基本設定 === */
+body {
+    margin: 0;
+    font-family: "Noto Serif TC", serif; /* 全站主要字型 */
+    background: #fffaf5; /* 背景顏色為米白 */
+    color: #333; /* 預設文字顏色 */
+  }
+  
+  .container {
+    max-width: 900px;       /* 區塊最大寬度 */
+    margin: 0 auto;         /* 水平置中 */
+    padding: 0 20px 40px;   /* 左右間距 + 底部間距 */
+  }
+  
+  
+  /* === 頁首 header 導覽列 === */
+  .header {
+    display: flex;                 /* 水平排列 Logo 與選單 */
+    justify-content: space-between;
+    align-items: center;
+    background: #f8cfcf;          /* 淺粉底色 */
+    padding: 10px 20px;
+    position: sticky;             /* 頁面滑動時固定在頂部 */
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 2px 5px rgb(0 0 0 / 0.1); /* 陰影 */
+  }
+  
+  .logo {
+    font-family: 'Playfair Display', serif; /* Logo 使用不同字型 */
+    font-size: 1.8rem;
+    color: #5b3a29; /* 咖啡色字體 */
+    margin: 0;
+  }
+
+  .logo a {
+    text-decoration: none;   /* 去掉底線 */
+    color: inherit;          /* 保留父元素顏色 */
+    font-weight: bold;       /* 可依設計加入粗體 */
+  }
+  
+  .logo a:hover {
+    text-decoration: underline; /* 滑過時加上底線（可選） */
+    color: #6a4e42;             /* 或變成主色調（視你主題色） */
+  }
+  /* === 回到首頁連結樣式 === */
+  .back-link {
+    display: inline-block;
+    margin-top: 30px;
+    padding: 8px 14px;
+    background-color: #f8e5e5;
+    color: #5b3a29;
+    border-radius: 6px;
+    font-weight: 600;
+    text-decoration: none;
+    transition: background-color 0.3s ease, color 0.3s ease;
+  }
+  
+  .back-link:hover {
+    background-color: #f3caca;
+    color: #b2464e;
+  }
+  
+  
+  
+  /* 導覽列容器 */
+  nav {
+    position: relative;
+  }
+  
+  /* 導覽列選單 */
+  .menu {
+    list-style: none;
+    display: flex;
+    gap: 20px;       /* 每個選單項目的間距 */
+    margin: 0;
+    padding: 0;
+  }
+  
+  /* 導覽列中的連結樣式 */
+  .menu li a {
+    text-decoration: none;
+    color: #5b3a29;
+    font-weight: 600;
+    font-family: 'Noto Serif TC', serif;
+    transition: color 0.3s ease;
+  }
+  
+  /* 滑鼠滑過導覽列連結的樣式 */
+  .menu li a:hover {
+    color: #d46a6a; /* 深粉紅色 */
+  }
+  
+  /* 漢堡選單圖示（桌面不顯示） */
+  .menu-toggle {
+    display: none;
+    font-size: 1.8rem;
+    cursor: pointer;
+    color: #5b3a29;
+  }
+
+  
+  .course-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+  }
+  
+  /* 將 a 樣式改為卡片樣式 */
+  .course-card {
+    display: block;
+    text-decoration: none;
+    background: #fff;
+    border: 1px solid #e9e2e2;
+    border-radius: 10px;
+    width: 280px;
+    padding: 15px;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    color: inherit; /* 保留內文原本顏色 */
+  }
+  
+  .course-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+  }
+  
+  .course-card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 8px;
+  }
+  
+  .course-card h3 {
+    font-size: 1.2rem;
+    margin: 12px 0 8px;
+    color: #5b3a29;
+  }
+  
+  .course-card p {
+    font-size: 0.95rem;
+    color: #6b4a4a;
+    margin-bottom: 0;
+  }
+  
+  
+  /* 更多課程按鈕置中 */
+  .more-center {
+    text-align: center;
+    margin-top: 20px;
+  }
+  
+  .more-button {
+    background: linear-gradient(to right, #d46a6a, #f8cfcf);
+    color: white;
+    font-weight: 600;
+    padding: 10px 20px;
+    border-radius: 30px;
+    text-decoration: none;
+    transition: background 0.3s ease;
+  }
+  
+  .more-button:hover {
+    background: linear-gradient(to right, #b2464e, #f5b3b3);
+  }
+  
+  
+  
+  /* === 手機版 RWD：漢堡選單樣式 === */
+  @media (max-width: 768px) {
+    .menu {
+      display: none;               /* 預設隱藏 */
+      flex-direction: column;
+      background: #ffeaea;
+      position: absolute;
+      top: 50px;
+      right: 0;
+      width: 180px;
+      border-radius: 8px;
+      padding: 10px;
+      box-shadow: 0 4px 8px rgb(0 0 0 / 0.15);
+    }
+  
+    .menu.active {
+      display: flex; /* 點擊漢堡圖示後顯示 */
+    }
+  
+    .menu-toggle {
+      display: block; /* 小螢幕才顯示漢堡圖示 */
+    }
+  }
+  
+  
+  /* === 課程主圖（首頁 banner 圖） === */
+  .course-image {
+    width: 100%;
+    max-height: 350px;
+    object-fit: cover;
+    border-radius: 10px;
+    margin: 20px 0;
+  }
+  
+  
+  /* === 首頁課程簡介文字 === */
+  .course-description {
+    font-size: 1.15rem;
+    line-height: 1.6;
+    color: #6b4a4a;
+    margin-bottom: 30px;
+    text-align: center;
+  }
+  
+  
+  /* === 各區段標題與內容樣式 === */
+  .section {
+    margin-bottom: 50px;
+    font-family: 'Noto Serif TC', serif;
+    color: #5b3a29;
+  }
+  
+  .section h2 {
+    font-size: 1.6rem;
+    margin-bottom: 15px;
+    border-bottom: 2px solid #d46a6a;
+    padding-bottom: 5px;
+  }
+  
+  
+  /* === 首頁課程介紹區塊的按鈕群組樣式 === */
+  .course-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+  }
+  
+  .course-buttons a {
+    text-decoration: none;
+    background: #d46a6a;       /* 粉紅背景 */
+    color: white;
+    padding: 10px 15px;
+    border-radius: 6px;
+    font-weight: 600;
+    transition: background-color 0.3s ease;
+  }
+  
+  .course-buttons a:hover {
+    background: #b2464e;       /* 滑過時變深紅 */
+  }
+  
+  
+  /* === 線上報名表單按鈕樣式 === */
+  .form-button {
+    display: inline-block;
+    background: #5b3a29;       /* 咖啡色背景 */
+    color: white;
+    padding: 12px 25px;
+    border-radius: 30px;
+    font-weight: 700;
+    text-decoration: none;
+    margin: 0 auto;         /* 水平置中 */
+    transition: background-color 0.3s ease;
+  }
+  
+  .form-button:hover {
+    background: #7a513e;       /* 滑過變淺咖啡色 */
+  }
+  
+  
+  /* === 學員作品集區塊的相簿樣式 === */
+  .gallery {
+    display: flex;
+    gap: 15px;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  
+  .gallery img {
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 8px;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.15);
+    transition: transform 0.3s ease;
+    cursor: pointer;
+  }
+  
+  .gallery img:hover {
+    transform: scale(1.05); /* 放大效果 */
+  }
+  
+  
+  /* === 頁尾區塊 === */
+  .footer {
+    text-align: center;
+    padding: 20px 0;
+    background: #f8cfcf;
+    color: #5b3a29;
+    font-family: 'Noto Serif TC', serif;
+    font-size: 0.9rem;
+    margin-top: 40px;
+  }
+  
+  
+  /* === 社群圖示連結樣式（LINE/IG/Facebook） === */
+  .links.icon-links {
+    display: flex;
+    gap: 15px;
+    justify-content: center;
+    margin: 20px 0 40px;
+  }
+  
+  .links.icon-links a img {
+    width: 30px;
+    height: 30px;
+    filter: drop-shadow(0 0 1px rgba(0,0,0,0.2));
+    transition: filter 0.3s ease;
+  }
+  
+  .links.icon-links a:hover img {
+    filter: drop-shadow(0 0 5px #d46a6a); /* 滑過時亮起效果 */
+  }
+  
