@@ -3,61 +3,77 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>學員作品集 | Kaori Artstudio</title>
+  <title>課程介紹 | Kaori Artstudio</title>
   <link rel="stylesheet" href="style.css" />
   <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@500&family=Playfair+Display:wght@500&display=swap" rel="stylesheet">
 </head>
 <body>
-  <div class="container">
-    <!-- 導覽列 -->
-    <header class="header">
-      <h1 class="logo"><a href="index.html">Kaori Artstudio</a></h1>
+  <header class="header">
+    <div class="header-inner">
+      <h1 class="logo">Kaori Artstudio</h1>
       <nav>
-        <div class="menu-toggle">☰</div>
+        <div class="menu-toggle" tabindex="0" aria-label="切換選單">☰</div>
         <ul class="menu">
           <li><a href="index.html#teacher">教師介紹</a></li>
-          <li><a href="index.html#course">課程介紹</a></li>
-          <li><a href="work.html#work">學員作品集</a></li>
+          <li><a href="class.html#class">課程介紹</a></li>
+          <li><a href="work.html#works">學員作品集</a></li>
           <li><a href="https://www.facebook.com/kaori.DIY?locale=zh_TW" target="_blank">Facebook</a></li>
           <li><a href="https://line.me/ti/g2/q2_Vu9IwDaYT47GJe6qrCkdUuh0U6dUtYyj10Q" target="_blank">LINE</a></li>
           <li><a href="https://www.instagram.com/kaori_artstudio" target="_blank">Instagram</a></li>
         </ul>
       </nav>
-    </header>
-
-    <!-- 課程介紹 -->
-    <div class="section" id="course">
-        <h2>📘 課程介紹</h2>
-        <div class="course-buttons">
-          <a href="course/陶瓷造型花器.html" target="_self">陶瓷造型花器</a>
-          <a href="course/壓克力燈串花球.html" target="_self">壓克力燈串花球</a>
-          <a href="course/畫布花器.html" target="_self">畫布花器</a>
-          <a href="course/橢圓樟木名片架.html" target="_self">橢圓樟木名片架</a>
-        </div>
-      </div>
-  
-    <!-- 返回首頁連結 -->
-    <a class="back-link" href="index.html">← 回到首頁</a>
-
-    <!-- 社群連結 -->
-    <div class="links icon-links">
-      <a href="https://www.facebook.com/kaori.DIY?locale=zh_TW" target="_blank">
-        <img src="https://upload.wikimedia.org/wikipedia/commons/0/05/Facebook_Logo_(2019).png" alt="Facebook" />
-      </a>
-      <a href="https://line.me/ti/g2/q2_Vu9IwDaYT47GJe6qrCkdUuh0U6dUtYyj10Q" target="_blank">
-        <img src="https://upload.wikimedia.org/wikipedia/commons/4/41/LINE_logo.svg" alt="LINE" />
-      </a>
-      <a href="https://www.instagram.com/kaori_artstudio" target="_blank">
-        <img src="https://upload.wikimedia.org/wikipedia/commons/a/a5/Instagram_icon.png" alt="Instagram" />
-      </a>
     </div>
+  </header>
+
+  <!-- ✅ 主要內容區 -->
+  <div class="container">
+    <div class="section" id="course">
+      <h2>📘 課程介紹</h2>
+      <div class="course-buttons">
+        <a href="course/陶瓷造型花器.html">
+          <img src="jpg/陶瓷造型花器.jpg" alt="陶瓷造型花器" />
+          <span>陶瓷造型花器</span>
+        </a>
+        <a href="course/壓克力燈串花球.html">
+          <img src="jpg/壓克力燈花球.jpg" alt="壓克力燈串花球" />
+          <span>壓克力燈串花球</span>
+        </a>
+        <a href="course/畫布花器.html">
+          <img src="jpg/畫布花器.jpg" alt="畫布花器" />
+          <span>畫布花器</span>
+        </a>
+        <a href="course/橢圓樟木名片架.html">
+          <img src="jpg/不凋花課程照片.jpg" alt="橢圓樟木名片架" />
+          <span>橢圓樟木名片架</span>
+        </a>
+      </div>
+    </div>
+
+    <a class="back-link" href="index.html">← 回到首頁</a>
   </div>
 
-  <footer class="footer">
-    <p>&copy; 2025 Kaori Artstudio.</p>
+  <!-- ✅ Footer 保持不變 -->
+  <footer class="site-footer">
+    <div class="footer-content">
+      <div class="social-icons">
+        <a href="https://www.facebook.com/kaori.DIY?locale=zh_TW" target="_blank">
+          <img src="https://upload.wikimedia.org/wikipedia/commons/0/05/Facebook_Logo_(2019).png" alt="Facebook" />
+        </a>
+        <a href="https://line.me/ti/g2/q2_Vu9IwDaYT47GJe6qrCkdUuh0U6dUtYyj10Q" target="_blank">
+          <img src="https://upload.wikimedia.org/wikipedia/commons/4/41/LINE_logo.svg" alt="LINE" />
+        </a>
+        <a href="https://www.instagram.com/kaori_artstudio" target="_blank">
+          <img src="https://upload.wikimedia.org/wikipedia/commons/a/a5/Instagram_icon.png" alt="Instagram" />
+        </a>
+      </div>
+      <p class="copyright">© 2025 Kaori Artstudio.</p>
+      <div class="contact-info">
+        <p>Email：kaoriart@example.com</p>
+      </div>
+    </div>
   </footer>
 
-  <!-- 漢堡選單 JS -->
+  <!-- ✅ JS：漢堡選單 -->
   <script>
     const toggle = document.querySelector('.menu-toggle');
     const menu = document.querySelector('.menu');
@@ -65,5 +81,6 @@
       menu.classList.toggle('active');
     });
   </script>
+
 </body>
 </html>
