@@ -7,16 +7,17 @@
   <meta name="description" content="Kaori Artstudio 提供專業不凋花課程，融合創意與傳統技藝，適合初學者與進階學員。一起探索美麗的永生花世界！" />
   <link rel="stylesheet" href="style.css" />
   <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@500&family=Playfair+Display:wght@500&display=swap" rel="stylesheet" />
+  
+  <!-- OG Meta 標籤 -->
   <meta property="og:title" content="Kaori Artstudio｜不凋花課程與藝術創作" />
   <meta property="og:description" content="專業不凋花課程，初學者也能輕鬆上手，點我了解更多！" />
-  <meta property="og:image" content="https://你的網站網址/jpg/不凋花課程照片.jpg" />
-  <meta property="og:url" content="https://你的網站網址" />
-
+  <meta property="og:image" content="https://kaoriart.com/jpg/不凋花課程照片.jpg" />
+  <meta property="og:url" content="https://kaoriart.com" />
 </head>
 <body>
-    <!-- 導覽列 -->
-    <header class="header">
-      <div class="header-inner">
+  <!-- 導覽列 -->
+  <header class="header">
+    <div class="header-inner">
       <h1 class="logo">Kaori Artstudio</h1>
       <nav>
         <div class="menu-toggle" tabindex="0" aria-label="切換選單">☰</div>
@@ -29,10 +30,10 @@
           <li><a href="https://www.instagram.com/kaori_artstudio?igsh=a3A3Zmw0eXkzenZv" target="_blank" rel="noopener">Instagram</a></li>
         </ul>
       </nav>
-      </div>
-    </header>
-  <div class="container">
+    </div>
+  </header>
 
+  <div class="container">
     <!-- 首圖與簡介 -->
     <img src="jpg/不凋花課程照片.jpg" alt="Kaori Artstudio 不凋花課程展示" class="course-image" />
     <p class="course-description">
@@ -42,7 +43,7 @@
 
     <!-- 不凋花介紹 -->
     <section class="section" id="flower">
-      <h2>🌸 什麼是不凋花？</h2>
+      <h2>什麼是不凋花？</h2>
       <p>
         不凋花（Preserved Flower）是使用天然花材，經過特殊技術處理，使花朵保持柔軟、色澤與形狀，
         可保存數年不凋謝，是現代永生花藝術的代表，適合居家佈置與禮物製作。
@@ -51,7 +52,7 @@
 
     <!-- 教師介紹 -->
     <section class="section" id="teacher">
-      <h2>👩‍🏫 教師介紹</h2>
+      <h2>教師介紹</h2>
       <p>
         🇯🇵 日本AUBE不凋花協會講師<br />
         🇯🇵 日本皇家磁器彩繪拼貼證書<br />
@@ -87,7 +88,8 @@
         <a class="form-button" href="https://docs.google.com/forms/你的表單連結" target="_blank">點我報名</a>
       </div>
     </section>
-    <!-- 學員作品集區塊（可點擊放大） -->
+
+    <!-- 學員作品集 -->
     <section class="section" id="works">
       <h2>作品集</h2>
       <div class="gallery">
@@ -101,10 +103,14 @@
           <img src="jpg/學員作品3.jpg" alt="作品3" />
         </a>
       </div>
+      <!-- 新增按鈕 -->
+      <div class="more-center">
+        <a class="more-button" href="work.html">點我看更多</a>
+      </div>
     </section>
-    
   </div>
-  <!-- footer頁尾 -->
+
+  <!-- footer -->
   <footer class="site-footer">
     <div class="footer-content">
       <div class="social-icons">
@@ -125,18 +131,17 @@
     </div>
   </footer>
 
-  <!-- Lightbox 圖片預覽浮層 -->
+  <!-- Lightbox -->
   <div class="lightbox-overlay" id="lightbox">
     <img src="" alt="放大圖片" id="lightbox-img" />
   </div>
 
-  <!-- JS 功能：漢堡選單 + Lightbox -->
+  <!-- JS 功能 -->
   <script>
-    // 圖片 Lightbox 功能
+    // Lightbox 功能
     const lightbox = document.getElementById('lightbox');
     const lightboxImg = document.getElementById('lightbox-img');
     const links = document.querySelectorAll('.lightbox-link');
-  
     links.forEach(link => {
       link.addEventListener('click', e => {
         e.preventDefault();
@@ -145,20 +150,25 @@
         lightbox.style.display = 'flex';
       });
     });
-  
     lightbox.addEventListener('click', () => {
       lightbox.style.display = 'none';
     });
-  
-    // 手機版漢堡選單功能
-    const toggleButton = document.querySelector('.menu-toggle');
+
+    // 手機漢堡選單
+    const toggle = document.querySelector('.menu-toggle');
     const menu = document.querySelector('.menu');
-  
-    toggleButton.addEventListener('click', () => {
+    toggle.addEventListener('click', (e) => {
+      e.stopPropagation();
       menu.classList.toggle('active');
     });
+    menu.addEventListener('click', (e) => {
+      if (e.target.tagName === 'A') menu.classList.remove('active');
+    });
+    document.addEventListener('click', (e) => {
+      if (!menu.contains(e.target) && !toggle.contains(e.target)) {
+        menu.classList.remove('active');
+      }
+    });
   </script>
-  
 </body>
 </html>
-

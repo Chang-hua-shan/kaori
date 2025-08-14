@@ -1,23 +1,36 @@
 /* === 全站基本設定 === */
-body {
+html, body {
+  height: 100%;
   margin: 0;
+  display: flex;
+  flex-direction: column;
   font-family: "Helvetica Neue", "Arial", "Noto Sans TC", sans-serif; /* 全站主要字型 */
   background: #ffffff; /* 背景顏色為純白 */
   color: #000000; /* 文字顏色黑色 */
 }
 
 .container {
+  flex: 1; /* 撐滿剩餘高度，讓 footer 在底部 */
   max-width: 900px;
   margin: 0 auto;
   padding: 0 20px 40px;
 }
+
+/* footer 保持在底部 */
+.site-footer {
+  background-color: #f8f8f8; /* 可依你的設計調整 */
+  padding: 20px 0;
+  text-align: center;
+}
+
+
 
 /* === 頁首 header 導覽列 === */
 .header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background: #B9AEDC; /* 淺紫色 */
+  background: 	 #fffaf5; /* 米白色 */
   padding: 10px 20px;
   position: sticky;
   top: 0;
@@ -47,7 +60,7 @@ body {
 .logo {
   font-family: 'Playfair Display', serif;
   font-size: 1.8rem;
-  color: #333333;
+  color: #000000;
   margin: 0;
 }
 
@@ -59,7 +72,7 @@ body {
 
 .logo a:hover {
   text-decoration: underline;
-  color: #333333;
+  color: #000000;
 }
 
 /* === 導覽列樣式 === */
@@ -77,7 +90,7 @@ nav {
 
 .menu li a { /* 頁面頂部的導覽列項目 */
   text-decoration: none;
-  color: #333333;
+  color: #000000;
   font-weight: 600;
   font-family: 'Noto Serif TC', serif;
   transition: color 0.3s ease;
@@ -91,7 +104,7 @@ nav {
   display: none;
   font-size: 1.8rem;
   cursor: pointer;
-  color: #333333;
+  color: #000000;
 }
 
 /* === 回到首頁連結樣式 （回上一頁 或是 點我報名的按鍵）===*/
@@ -99,7 +112,7 @@ nav {
   display: none;
   margin-top: 30px;
   padding: 8px 14px;
-  background-color: #efe8ff;
+  background-color: #ffffff;
   color: #000000;
   border-radius: 6px;
   font-weight: 600;
@@ -108,7 +121,7 @@ nav {
 }
 
 .back-link:hover {/* 鼠標滑過時（回上一頁 或是 點我報名的按鍵） */
-  background-color: #e4c4ed;
+  background-color: #b0acac;
   color: #000000;
 }
 
@@ -146,15 +159,15 @@ nav {
   border-radius: 8px;
 }
 
-.course-card h3 {
+.course-card h3 {/*首頁課程介紹的字顏色*/
   font-size: 1.2rem;
   margin: 12px 0 8px;
-  color: #5b3a29;
+  color: #000000;
 }
 
 .course-card p {
   font-size: 0.95rem;
-  color: #6b4a4a;
+  color: #df1c1c;
   margin-bottom: 0;
 }
 
@@ -164,8 +177,8 @@ nav {
   margin-top: 20px;
 }
 
-.more-button {
-  background: linear-gradient(to right, #d46a6a, #f8cfcf);
+.more-button {/*首頁中的查看更多課程按鈕*/
+  background: linear-gradient(to right, #c4bbbb, #c4bbbb);
   color: white;
   font-weight: 600;
   padding: 10px 20px;
@@ -175,7 +188,7 @@ nav {
 }
 
 .more-button:hover {
-  background: linear-gradient(to right, #b2464e, #f5b3b3);
+  background: linear-gradient(to right, #c7c4c4, #c7c4c4);
 }
 
 /* === 手機版漢堡選單 RWD === */
@@ -183,7 +196,7 @@ nav {
   .menu {
     display: none;
     flex-direction: column;
-    background: #ffeaea;
+    background: #fcf7f7;
     position: absolute;
     top: 50px;
     right: 0;
@@ -215,7 +228,7 @@ nav {
 .course-description {
   font-size: 1.15rem;
   line-height: 1.6;
-  color: #6b4a4a;
+  color: #000000;
   margin-bottom: 30px;
   text-align: center;
 }
@@ -224,13 +237,13 @@ nav {
 .section {
   margin-bottom: 50px;
   font-family: 'Noto Serif TC', serif;
-  color: #5b3a29;
+  color: #000000;
 }
 
 .section h2 {
   font-size: 1.6rem;
   margin-bottom: 15px;
-  border-bottom: 2px solid #d46a6a;
+  border-bottom: 2px solid #c4bbbb;
   padding-bottom: 5px;
 }
 
@@ -273,7 +286,7 @@ nav {
   font-family: 'Noto Serif TC', serif;
   font-weight: 600;
   font-size: 1rem;
-  color: #5b3a29;
+  color: #000000;
   text-align: center;
 }
 /* === 課程內頁排版：左圖右文 === */
@@ -295,10 +308,10 @@ nav {
   box-shadow: 0 2px 8px rgba(0,0,0,0.15); /* 陰影 */
 }
 
-.course-text {
+.course-text {/*單一課程裡面的字體*/
   flex: 1 1 300px;
   font-size: 1.05rem;
-  color: #4a3c38;
+  color: #000000;
   line-height: 1.7;
 }
 
@@ -315,7 +328,7 @@ nav {
 /* === 線上報名按鈕 === */
 .form-button {
   display: inline-block;
-  background: #5b3a29;
+  background: #c4bbbb;
   color: white;
   padding: 12px 25px;
   border-radius: 30px;
@@ -326,7 +339,7 @@ nav {
 }
 
 .form-button:hover {
-  background: #7a513e;
+  background: #797979;
 }
 
 /* === 學員作品集輪播樣式 === */
@@ -480,14 +493,14 @@ nav {
 .footer {
   text-align: center;
   padding: 20px 0;
-  background: #f8cfcf;
+  background: #fffaf5;
   color: #5b3a29;
   font-family: 'Noto Serif TC', serif;
   font-size: 0.9rem;
   margin-top: 40px;
 }
 .site-footer {
-  background-color: #f8dede;
+  background-color: #fffaf5;
   padding: 30px 20px;
   text-align: center;
   font-size: 14px;
