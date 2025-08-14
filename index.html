@@ -7,7 +7,7 @@
   <meta name="description" content="Kaori Artstudio 提供專業不凋花課程，融合創意與傳統技藝，適合初學者與進階學員。一起探索美麗的永生花世界！" />
   <link rel="stylesheet" href="style.css" />
   <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@500&family=Playfair+Display:wght@500&display=swap" rel="stylesheet" />
-  
+
   <!-- OG Meta 標籤 -->
   <meta property="og:title" content="Kaori Artstudio｜不凋花課程與藝術創作" />
   <meta property="og:description" content="專業不凋花課程，初學者也能輕鬆上手，點我了解更多！" />
@@ -103,7 +103,6 @@
           <img src="jpg/學員作品3.jpg" alt="作品3" />
         </a>
       </div>
-      <!-- 新增按鈕 -->
       <div class="more-center">
         <a class="more-button" href="work.html">點我看更多</a>
       </div>
@@ -138,7 +137,7 @@
 
   <!-- JS 功能 -->
   <script>
-    // Lightbox 功能
+    // === Lightbox 功能 ===
     const lightbox = document.getElementById('lightbox');
     const lightboxImg = document.getElementById('lightbox-img');
     const links = document.querySelectorAll('.lightbox-link');
@@ -154,16 +153,20 @@
       lightbox.style.display = 'none';
     });
 
-    // 手機漢堡選單
+    // === 手機漢堡選單功能修正 ===
     const toggle = document.querySelector('.menu-toggle');
     const menu = document.querySelector('.menu');
     toggle.addEventListener('click', (e) => {
-      e.stopPropagation();
+      e.stopPropagation(); // 防止點擊漢堡時被 document click 捕捉
       menu.classList.toggle('active');
     });
+
+    // 點擊選單連結時自動收起
     menu.addEventListener('click', (e) => {
       if (e.target.tagName === 'A') menu.classList.remove('active');
     });
+
+    // 點擊頁面其他地方收起選單
     document.addEventListener('click', (e) => {
       if (!menu.contains(e.target) && !toggle.contains(e.target)) {
         menu.classList.remove('active');
