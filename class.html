@@ -6,63 +6,75 @@
   <title>課程介紹 | Kaori Artstudio</title>
   <link rel="stylesheet" href="style.css" />
   <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@500&family=Playfair+Display:wght@500&display=swap" rel="stylesheet">
+  <meta name="description" content="Kaori Artstudio 課程介紹：不凋花藝術、多款花器創作與手作體驗，適合初學到進階學員。">
 </head>
 <body>
+  <!-- Header（與 index 一致） -->
   <header class="header">
     <div class="header-inner">
       <h1 class="logo"><a href="index.html">Kaori Artstudio</a></h1>
       <nav>
-        <div class="menu-toggle" tabindex="0" aria-label="切換選單">☰</div>
-        <ul class="menu">
+        <button class="menu-toggle" type="button" aria-label="切換選單" aria-controls="site-menu" aria-expanded="false">☰</button>
+        <ul class="menu" id="site-menu">
           <li><a href="index.html#teacher">教師介紹</a></li>
           <li><a href="class.html#class">課程介紹</a></li>
           <li><a href="work.html#works">學員作品集</a></li>
-          <li><a href="https://www.facebook.com/kaori.DIY?locale=zh_TW" target="_blank">Facebook</a></li>
-          <li><a href="https://line.me/ti/g2/q2_Vu9IwDaYT47GJe6qrCkdUuh0U6dUtYyj10Q" target="_blank">LINE</a></li>
-          <li><a href="https://www.instagram.com/kaori_artstudio" target="_blank">Instagram</a></li>
+          <li><a href="https://www.facebook.com/kaori.DIY?locale=zh_TW" target="_blank" rel="noopener">Facebook</a></li>
+          <li><a href="https://line.me/ti/g2/q2_Vu9IwDaYT47GJe6qrCkdUuh0U6dUtYyj10Q" target="_blank" rel="noopener">LINE</a></li>
+          <li><a href="https://www.instagram.com/kaori_artstudio" target="_blank" rel="noopener">Instagram</a></li>
         </ul>
       </nav>
     </div>
   </header>
 
-  <!-- ✅ 主要內容區 -->
-  <div class="container">
-    <div class="section" id="course">
+  <!-- Main -->
+  <main class="container">
+    <section class="section" id="class">
       <h2>📘 課程介紹</h2>
+
+      <!-- 課程快速選擇卡片（RWD 單欄/多欄自適應） -->
       <div class="course-buttons">
         <a href="course/陶瓷造型花器.html">
-          <img src="jpg/陶瓷造型花器.jpg" alt="陶瓷造型花器" />
+          <img src="jpg/陶瓷造型花器.jpg" alt="陶瓷造型花器" loading="lazy" decoding="async" />
           <span>陶瓷造型花器</span>
         </a>
         <a href="course/壓克力燈串花球.html">
-          <img src="jpg/壓克力燈花球.jpg" alt="壓克力燈串花球" />
+          <img src="jpg/壓克力燈花球.jpg" alt="壓克力燈串花球" loading="lazy" decoding="async" />
           <span>壓克力燈串花球</span>
         </a>
         <a href="course/畫布花器.html">
-          <img src="jpg/畫布花器.jpg" alt="畫布花器" />
+          <img src="jpg/畫布花器.jpg" alt="畫布花器" loading="lazy" decoding="async" />
           <span>畫布花器</span>
         </a>
         <a href="course/橢圓樟木名片架.html">
-          <img src="jpg/不凋花課程照片.jpg" alt="橢圓樟木名片架" />
+          <img src="jpg/不凋花課程照片.jpg" alt="橢圓樟木名片架" loading="lazy" decoding="async" />
           <span>橢圓樟木名片架</span>
         </a>
       </div>
+
+      <!-- 報名按鈕 -->
+      <div class="more-center" style="margin-top:28px;">
+        <a class="form-button" href="https://docs.google.com/forms/你的表單連結" target="_blank" rel="noopener">線上報名 / 預約體驗課</a>
+      </div>
+    </section>
+
+    <!-- 回首頁 -->
+    <div class="more-center" style="margin-top:24px;">
+      <a class="more-button" href="index.html">← 回到首頁</a>
     </div>
+  </main>
 
-    <a class="back-link" href="index.html">← 回到首頁</a>
-  </div>
-
-  <!-- ✅ Footer 保持不變 -->
+  <!-- Footer（與 index 一致） -->
   <footer class="site-footer">
     <div class="footer-content">
       <div class="social-icons">
-        <a href="https://www.facebook.com/kaori.DIY?locale=zh_TW" target="_blank">
+        <a href="https://www.facebook.com/kaori.DIY?locale=zh_TW" target="_blank" rel="noopener">
           <img src="https://upload.wikimedia.org/wikipedia/commons/0/05/Facebook_Logo_(2019).png" alt="Facebook" />
         </a>
-        <a href="https://line.me/ti/g2/q2_Vu9IwDaYT47GJe6qrCkdUuh0U6dUtYyj10Q" target="_blank">
+        <a href="https://line.me/ti/g2/q2_Vu9IwDaYT47GJe6qrCkdUuh0U6dUtYyj10Q" target="_blank" rel="noopener">
           <img src="https://upload.wikimedia.org/wikipedia/commons/4/41/LINE_logo.svg" alt="LINE" />
         </a>
-        <a href="https://www.instagram.com/kaori_artstudio" target="_blank">
+        <a href="https://www.instagram.com/kaori_artstudio" target="_blank" rel="noopener">
           <img src="https://upload.wikimedia.org/wikipedia/commons/a/a5/Instagram_icon.png" alt="Instagram" />
         </a>
       </div>
@@ -73,14 +85,45 @@
     </div>
   </footer>
 
-  <!-- ✅ JS：漢堡選單 -->
+  <!-- JS（與 index 一致的選單邏輯） -->
   <script>
     const toggle = document.querySelector('.menu-toggle');
-    const menu = document.querySelector('.menu');
-    toggle.addEventListener('click', () => {
-      menu.classList.toggle('active');
-    });
-  </script>
+    const menu = document.getElementById('site-menu');
 
+    function openMenu() {
+      menu.classList.add('open');
+      document.body.classList.add('nav-open');
+      toggle.setAttribute('aria-expanded', 'true');
+    }
+    function closeMenu() {
+      menu.classList.remove('open');
+      document.body.classList.remove('nav-open');
+      toggle.setAttribute('aria-expanded', 'false');
+    }
+    function toggleMenu(e) {
+      e?.stopPropagation();
+      menu.classList.contains('open') ? closeMenu() : openMenu();
+    }
+
+    if (toggle && menu) {
+      toggle.addEventListener('click', toggleMenu);
+      toggle.addEventListener('keydown', (e) => {
+        if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); toggleMenu(e); }
+        if (e.key === 'Escape') closeMenu();
+      });
+      menu.addEventListener('click', (e) => {
+        if (e.target.closest('a')) closeMenu();
+      });
+      document.addEventListener('click', (e) => {
+        if (!menu.contains(e.target) && !toggle.contains(e.target)) closeMenu();
+      });
+      document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape') closeMenu();
+      });
+    }
+
+    // iOS 點擊高亮處理
+    document.addEventListener('touchstart', ()=>{}, {passive: true});
+  </script>
 </body>
 </html>

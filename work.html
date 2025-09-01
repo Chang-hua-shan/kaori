@@ -6,51 +6,71 @@
   <title>學員作品集 | Kaori Artstudio</title>
   <link rel="stylesheet" href="style.css" />
   <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@500&family=Playfair+Display:wght@500&display=swap" rel="stylesheet">
+  <meta name="description" content="Kaori Artstudio 學員作品集：不凋花創作、課堂成果與展演花絮，感受學員們的美好成長。">
 </head>
 <body>
-  <!-- 導覽列 -->
+  <!-- Header（與 index / class 一致） -->
   <header class="header">
     <div class="header-inner">
-    <h1 class="logo"><a href="index.html">Kaori Artstudio</a></h1>
-    <nav>
-      <div class="menu-toggle">☰</div>
-      <ul class="menu">
-        <li><a href="index.html#teacher">教師介紹</a></li>
-        <li><a href="class.html#class">課程介紹</a></li>
-        <li><a href="work.html#work">學員作品集</a></li>
-        <li><a href="https://www.facebook.com/kaori.DIY?locale=zh_TW" target="_blank">Facebook</a></li>
-        <li><a href="https://line.me/ti/g2/q2_Vu9IwDaYT47GJe6qrCkdUuh0U6dUtYyj10Q" target="_blank">LINE</a></li>
-        <li><a href="https://www.instagram.com/kaori_artstudio" target="_blank">Instagram</a></li>
-      </ul>
-    </nav>
-  </header>
-  <div class="container">
-    <!-- 作品集內容 -->
-    <div class="gallery">
-      <div class="gallery-item">
-        <a href="" target="_blank">
-          <img src="" alt="作品1" loading="lazy" />
-        </a>
-      </div>
-      <!-- 再加更多作品 -->
+      <h1 class="logo"><a href="index.html">Kaori Artstudio</a></h1>
+      <nav>
+        <button class="menu-toggle" type="button" aria-label="切換選單" aria-controls="site-menu" aria-expanded="false">☰</button>
+        <ul class="menu" id="site-menu">
+          <li><a href="index.html#teacher">教師介紹</a></li>
+          <li><a href="class.html#class">課程介紹</a></li>
+          <li><a href="work.html#works">學員作品集</a></li>
+          <li><a href="https://www.facebook.com/kaori.DIY?locale=zh_TW" target="_blank" rel="noopener">Facebook</a></li>
+          <li><a href="https://line.me/ti/g2/q2_Vu9IwDaYT47GJe6qrCkdUuh0U6dUtYyj10Q" target="_blank" rel="noopener">LINE</a></li>
+          <li><a href="https://www.instagram.com/kaori_artstudio" target="_blank" rel="noopener">Instagram</a></li>
+        </ul>
+      </nav>
     </div>
-    
+  </header>
 
-    <!-- 返回首頁連結 -->
-    <a class="back-link" href="index.html">← 回到首頁</a>
-  </div>
+  <main class="container">
+    <section class="section" id="works">
+      <h2>學員作品集</h2>
 
-  <!-- footer頁尾 -->
+      <!-- 作品集 Grid：點擊可開 Lightbox -->
+      <div class="gallery">
+        <a href="jpg/學員作品1.jpg" class="lightbox-link">
+          <img src="jpg/學員作品1.jpg" alt="作品1" loading="lazy" decoding="async" />
+        </a>
+        <a href="jpg/學員作品2.jpg" class="lightbox-link">
+          <img src="jpg/學員作品2.jpg" alt="作品2" loading="lazy" decoding="async" />
+        </a>
+        <a href="jpg/學員作品3.jpg" class="lightbox-link">
+          <img src="jpg/學員作品3.jpg" alt="作品3" loading="lazy" decoding="async" />
+        </a>
+        <a href="jpg/學員作品4.jpg" class="lightbox-link">
+          <img src="jpg/學員作品4.jpg" alt="作品4" loading="lazy" decoding="async" />
+        </a>
+        <a href="jpg/學員作品5.jpg" class="lightbox-link">
+          <img src="jpg/學員作品5.jpg" alt="作品5" loading="lazy" decoding="async" />
+        </a>
+        <a href="jpg/學員作品6.jpg" class="lightbox-link">
+          <img src="jpg/學員作品6.jpg" alt="作品6" loading="lazy" decoding="async" />
+        </a>
+        <!-- 需要更多就複製上面 <a> 區塊 -->
+      </div>
+
+      <div class="more-center" style="margin-top:24px;">
+        <a class="more-button" href="index.html">← 回到首頁</a>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer（與其他頁一致） -->
   <footer class="site-footer">
     <div class="footer-content">
       <div class="social-icons">
-        <a href="https://www.facebook.com/kaori.DIY?locale=zh_TW" target="_blank">
+        <a href="https://www.facebook.com/kaori.DIY?locale=zh_TW" target="_blank" rel="noopener">
           <img src="https://upload.wikimedia.org/wikipedia/commons/0/05/Facebook_Logo_(2019).png" alt="Facebook" />
         </a>
-        <a href="https://line.me/ti/g2/q2_Vu9IwDaYT47GJe6qrCkdUuh0U6dUtYyj10Q" target="_blank">
+        <a href="https://line.me/ti/g2/q2_Vu9IwDaYT47GJe6qrCkdUuh0U6dUtYyj10Q" target="_blank" rel="noopener">
           <img src="https://upload.wikimedia.org/wikipedia/commons/4/41/LINE_logo.svg" alt="LINE" />
         </a>
-        <a href="https://www.instagram.com/kaori_artstudio?igsh=a3A3Zmw0eXkzenZv" target="_blank">
+        <a href="https://www.instagram.com/kaori_artstudio" target="_blank" rel="noopener">
           <img src="https://upload.wikimedia.org/wikipedia/commons/a/a5/Instagram_icon.png" alt="Instagram" />
         </a>
       </div>
@@ -61,13 +81,65 @@
     </div>
   </footer>
 
-  <!-- 漢堡選單 JS -->
+  <!-- Lightbox -->
+  <div class="lightbox-overlay" id="lightbox" aria-hidden="true">
+    <img src="" alt="放大圖片" id="lightbox-img" />
+  </div>
+
+  <!-- JS（與 index / class 一致） -->
   <script>
-    const toggle = document.querySelector('.menu-toggle');
-    const menu = document.querySelector('.menu');
-    toggle.addEventListener('click', () => {
-      menu.classList.toggle('active');
+    /* === Lightbox === */
+    const lightbox = document.getElementById('lightbox');
+    const lightboxImg = document.getElementById('lightbox-img');
+    const links = document.querySelectorAll('.lightbox-link');
+
+    links.forEach(link => {
+      link.addEventListener('click', e => {
+        e.preventDefault();
+        lightboxImg.src = link.getAttribute('href');
+        lightbox.style.display = 'flex';
+        lightbox.setAttribute('aria-hidden', 'false');
+      });
     });
+
+    lightbox.addEventListener('click', () => {
+      lightbox.style.display = 'none';
+      lightbox.setAttribute('aria-hidden', 'true');
+    });
+
+    /* === 抽屜式手機選單 === */
+    const toggle = document.querySelector('.menu-toggle');
+    const menu = document.getElementById('site-menu');
+
+    function openMenu() {
+      menu.classList.add('open');
+      document.body.classList.add('nav-open');
+      toggle.setAttribute('aria-expanded', 'true');
+    }
+    function closeMenu() {
+      menu.classList.remove('open');
+      document.body.classList.remove('nav-open');
+      toggle.setAttribute('aria-expanded', 'false');
+    }
+    function toggleMenu(e) {
+      e?.stopPropagation();
+      menu.classList.contains('open') ? closeMenu() : openMenu();
+    }
+
+    if (toggle && menu) {
+      toggle.addEventListener('click', toggleMenu);
+      toggle.addEventListener('keydown', (e) => {
+        if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); toggleMenu(e); }
+        if (e.key === 'Escape') closeMenu();
+      });
+      menu.addEventListener('click', (e) => { if (e.target.closest('a')) closeMenu(); });
+      document.addEventListener('click', (e) => {
+        if (!menu.contains(e.target) && !toggle.contains(e.target)) closeMenu();
+      });
+      document.addEventListener('keydown', (e) => { if (e.key === 'Escape') closeMenu(); });
+    }
+
+    document.addEventListener('touchstart', ()=>{}, {passive: true});
   </script>
 </body>
 </html>

@@ -206,6 +206,8 @@ nav {
   }
 }
 
+
+
 /* === 首頁 banner 圖片 === */
 .course-image {
   width: 100%;
@@ -468,4 +470,170 @@ nav {
 .button-row a {
   min-width: 180px;
   text-align: center;
+}
+
+/* =========================
+   手機優化（<= 768px）
+   ========================= */
+   @media (max-width: 768px) {
+    /* 1) 版心與排版密度 */
+    .container {
+      max-width: 100%;
+      padding: 0 16px 32px; /* 手機左右留白更窄，視覺更集中 */
+    }
+  
+    /* 2) 字體大小使用 clamp：在不同螢幕寬度間自動縮放 */
+    h1 { font-size: clamp(22px, 5vw, 28px); }
+    h2 { font-size: clamp(18px, 4.2vw, 24px); }
+    p, li, a, button, input, label { font-size: clamp(14px, 3.8vw, 18px); line-height: 1.6; }
+  
+    /* 3) Header：縮小高度、確保漢堡選單可點 */
+    .header {
+      padding: 10px 16px;
+    }
+    .logo {
+      font-size: 1.4rem; /* 手機上 Logo 稍微縮小 */
+    }
+    .menu-toggle {
+      display: block;                /* 手機顯示漢堡 */
+      font-size: 28px;               /* 點擊區放大 */
+      line-height: 1;
+      padding: 8px;                  /* 增加可點擊面積 */
+      -webkit-tap-highlight-color: transparent;
+    }
+  
+    /* 4) 導覽選單：由水平改為全螢幕抽屜式 */
+    .menu {
+      position: fixed;
+      inset: 0;                      /* top/right/bottom/left: 0 */
+      background: rgba(255,255,255,0.98);
+      padding: 72px 24px 24px;
+      display: none;                 /* 預設關閉，由 .menu.open 打開 */
+      flex-direction: column;
+      gap: 12px;
+      overflow-y: auto;
+      z-index: 999;                  /* 蓋過其他元素 */
+    }
+    .menu.open { display: flex; }
+    .menu li { border-bottom: 1px solid #eee; }
+    .menu a {
+      display: block;
+      padding: 14px 4px;
+      text-decoration: none;
+    }
+  
+    /* 5) 打開選單時禁止背景捲動（搭配 body.nav-open）*/
+    body.nav-open {
+      height: 100vh;
+      overflow: hidden;
+      position: fixed;
+      width: 100%;
+    }
+  
+    /* 6) Hero 區塊：縮短高度、按鈕垂直排列 */
+    .hero {
+      padding: 48px 0 32px;
+      text-align: center;
+    }
+    .hero .actions {
+      display: grid;
+      gap: 12px;
+      grid-auto-flow: row;
+      justify-items: center;
+    }
+    .hero .actions .btn {
+      width: 100%;
+      max-width: 320px;              /* 手機按鈕寬、好點 */
+      padding: 14px 16px;
+      border-radius: 12px;
+    }
+  
+    /* 7) 卡片（課程 / 作品）由多欄改單欄，增大可點區 */
+    .card-grid {
+      display: grid;
+      grid-template-columns: 1fr;    /* 單欄 */
+      gap: 16px;
+    }
+    .card {
+      border-radius: 14px;
+      overflow: hidden;
+      /* 增加陰影在手機更清楚卡片分界 */
+      box-shadow: 0 6px 18px rgba(0,0,0,0.06);
+    }
+    .card img {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+    .card .card-body { padding: 14px; }
+  
+    /* 8) 圖片與媒體：避免超出容器、提高載入穩定性 */
+    img, video {
+      max-width: 100%;
+      height: auto;
+    }
+  
+    /* 9) 表單元素：避免 iOS 自動放大（使用 16px 以上字體） */
+    input, textarea, select {
+      font-size: 16px;
+      padding: 12px 14px;
+      border-radius: 10px;
+      width: 100%;
+      box-sizing: border-box;
+    }
+  
+    /* 10) Footer：改為堆疊，社群圖示好點擊 */
+    .footer {
+      padding: 20px 16px 32px;
+      text-align: center;
+    }
+    .footer .social {
+      display: flex;
+      justify-content: center;
+      gap: 14px;
+      margin: 10px 0 0;
+    }
+    .footer .social a {
+      display: inline-flex;
+      width: 44px; height: 44px;     /* 44px 是良好觸控目標 */
+      align-items: center; justify-content: center;
+      border-radius: 50%;
+      border: 1px solid #eee;
+    }
+  
+    /* 11) Lightbox / Modal：填滿寬度、保留關閉鈕空間 */
+    .lightbox img {
+      max-height: calc(100vh - 120px);
+      width: auto;
+    }
+  
+    /* 12) 動畫在手機弱化，避免掉幀（若你有用到） */
+    .animate, [data-animate] {
+      transition-duration: 280ms !important;
+    }
+    .heavy-anim {
+      animation: none !important;
+    }
+  }
+  
+  /* iPhone 安全區（如果 header/footer 貼齊邊緣） */
+  @supports(padding:max(0px)) {
+    .header { padding-top: max(10px, env(safe-area-inset-top)); }
+    .menu   { padding-top: max(72px, env(safe-area-inset-top)); }
+    .footer { padding-bottom: max(32px, env(safe-area-inset-bottom)); }
+  }
+  
+  /* === 作品集欄數：手機 2 欄、平板 3 欄、桌機最多 4 欄 === */
+.gallery {
+  display: grid;
+  gap: 20px;
+  grid-template-columns: repeat(2, 1fr);     /* 手機：2 欄 */
+}
+
+@media (min-width: 768px) {
+  .gallery { grid-template-columns: repeat(3, 1fr); } /* 平板：3 欄 */
+}
+
+@media (min-width: 1200px) {
+  .gallery { grid-template-columns: repeat(4, 1fr); } /* 大桌機：4 欄 */
 }
