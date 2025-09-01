@@ -425,6 +425,26 @@ nav { position: relative; }
   }
   .course-grid .course-card:nth-child(n+5) { display: none; }
 
+  /* === class.html 手機課程卡片：兩個一排 === */
+.course-buttons {
+  display: grid;                          /* 改成 grid */
+  grid-template-columns: repeat(2, 1fr);  /* 兩欄 */
+  gap: 16px;                              /* 卡片間距 */
+  justify-items: stretch;
+}
+
+.course-buttons a {
+  width: 100%;                /* 讓卡片自動撐滿欄位 */
+  padding: 12px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.06);
+}
+
+.course-buttons a img {
+  height: 120px;               /* 固定高度，讓排版整齊 */
+  object-fit: cover;
+}
+
+
   /* === 手機作品集：改成橫向滑動相簿（連續滑） === */
   .gallery {
     display: flex;                    /* 改為水平排列 */
