@@ -35,15 +35,15 @@ body { padding-top: var(--header-h); }
   color: #4a4a4a;
 }
 
-/* === 頁首 header 導覽列（改為 fixed） === */
+/* === 頁首 header 導覽列（固定頂部） === */
 .header {
-  position: fixed;   /* 由 sticky 改為 fixed */
+  position: fixed;
   top: 0; left: 0; right: 0;
-  z-index: 1500;     /* 高於抽屜選單，低於燈箱 */
+  z-index: 1500;
   display: flex;
-  justify-content: center;  /* 讓 header-inner 在中間 */
+  justify-content: center;
   align-items: center;
-  background: #fffaf5; /* 米白色 */
+  background: #fffaf5;
   padding: 10px 20px;
   box-shadow: 0 2px 5px rgb(0 0 0 / 0);
   width: 100%;
@@ -108,7 +108,7 @@ nav { position: relative; }
   padding: 6px 10px;
 }
 
-/* === 課程區塊卡片 === */
+/* === 課程區塊卡片（桌機預設） === */
 .course-grid {
   display: flex;
   flex-wrap: wrap;
@@ -207,12 +207,12 @@ nav { position: relative; }
   text-align: center;
 }
 
-/* === 各區塊標題統一樣式（加上錨點偏移） === */
+/* === 各區塊標題統一樣式（含錨點偏移） === */
 .section {
   margin-bottom: 50px;
   font-family: 'Noto Serif TC', serif;
   color: #000000;
-  scroll-margin-top: calc(var(--header-h) + 12px); /* 新增：避免被固定 header 遮住 */
+  scroll-margin-top: calc(var(--header-h) + 12px);
 }
 
 .section h2 {
@@ -310,7 +310,7 @@ nav { position: relative; }
 
 .gallery img:hover { transform: scale(1.05); }
 
-/* === Lightbox 放大效果（層級保持最高） === */
+/* === Lightbox 放大效果（層級最高） === */
 .lightbox-overlay {
   position: fixed;
   inset: 0;
@@ -318,7 +318,7 @@ nav { position: relative; }
   display: none;
   justify-content: center;
   align-items: center;
-  z-index: 2000; /* 高於 header(1500) 與 menu(1100) */
+  z-index: 2000;
 }
 
 .lightbox-overlay img {
@@ -381,18 +381,18 @@ nav { position: relative; }
   .logo { font-size: 1.4rem; }
   .menu-toggle { display: inline-block; }
 
-  /* 手機：抽屜選單從 header 底下開始（重要修改） */
+  /* 手機：抽屜選單從 header 底下開始 */
   .menu {
     position: fixed;
-    top: var(--header-h);   /* 由原本 inset:0 改為從 header 下方開始 */
+    top: var(--header-h);
     left: 0; right: 0; bottom: 0;
     background: rgba(255,255,255,0.98);
-    padding: 24px;          /* 原本 72px -> 24px，因為 header 已佔位 */
+    padding: 24px;
     display: none;
     flex-direction: column;
     gap: 12px;
     overflow-y: auto;
-    z-index: 1100;          /* 低於 header(1500) */
+    z-index: 1100;
   }
   .menu.open { display: flex; }
 
@@ -404,9 +404,27 @@ nav { position: relative; }
     width: 100%;
   }
 
-  /* 卡片單欄、陰影更明顯 */
-  .course-grid { justify-content: stretch; }
-  .course-card { width: 100%; box-shadow: 0 6px 18px rgba(0,0,0,0.06); }
+  /* === 你要的改動：手機課程卡片 2 欄，最多顯示 4 個 === */
+  .course-grid {
+    display: grid;                                   /* 由 flex 改為 grid */
+    grid-template-columns: repeat(2, minmax(0, 1fr));/* 兩張圖一排 */
+    gap: 16px;
+    justify-items: stretch;
+  }
+  .course-card {
+    width: auto;            /* 讓卡片自動撐滿欄寬 */
+    padding: 12px;
+    box-shadow: 0 6px 18px rgba(0,0,0,0.06);
+  }
+  .course-card img {
+    height: 140px;          /* 手機版縮短圖片高度 */
+  }
+  .course-card h3 {
+    font-size: 1rem;
+    margin: 10px 0 0;
+  }
+  /* 最多顯示四個課程卡片（第 5 個之後隱藏） */
+  .course-grid .course-card:nth-child(n+5) { display: none; }
 
   /* Lightbox 手機顯示高度 */
   .lightbox-overlay img { max-height: calc(100vh - 120px); width: auto; }
@@ -416,10 +434,9 @@ nav { position: relative; }
   .footer-content { gap: 14px; }
 }
 
-/* iPhone 安全區（如 header/footer 貼邊） */
+/* iPhone 安全區 */
 @supports(padding:max(0px)) {
   .header { padding-top: max(10px, env(safe-area-inset-top)); }
-  /* 避免與 header 重疊，menu 不再需要 72px 的額外頂部內距 */
   .menu   { padding-top: max(24px, env(safe-area-inset-top)); }
   .site-footer { padding-bottom: max(32px, env(safe-area-inset-bottom)); }
 }
