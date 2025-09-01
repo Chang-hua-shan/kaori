@@ -484,3 +484,16 @@ nav { position: relative; }
   .menu   { padding-top: max(24px, env(safe-area-inset-top)); }
   .site-footer { padding-bottom: max(32px, env(safe-area-inset-bottom)); }
 }
+
+/* 桌機：作品集圖片與課程卡片圖片一致 */
+.gallery img {
+  height: 200px;        /* 跟 .course-card img 一樣 */
+  object-fit: cover;
+}
+
+/* 手機：縮小到一致的高度 */
+@media (max-width: 768px) {
+  .gallery img {
+    height: 140px;      /* 跟手機課程卡片一樣 */
+  }
+}
