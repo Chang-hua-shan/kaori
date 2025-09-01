@@ -18,58 +18,51 @@ html, body {
 
 /* footer 保持在底部 */
 .site-footer {
-  background-color: #f8f8f8;
-  padding: 20px 0;
+  background-color: #fffaf5;
+  padding: 30px 20px;
   text-align: center;
+  font-size: 14px;
+  color: #4a4a4a;
 }
 
-/* === 頁首 header 導覽列 === */
+/* === Header 導覽列 === */
 .header {
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
-  background: #fffaf5; /* 米白色 */
+  background: #fffaf5;
   padding: 10px 20px;
   position: sticky;
   top: 0;
   z-index: 1000;
-  box-shadow: 0 2px 5px rgb(0, 0, 0, 0);
+  box-shadow: 0 2px 5px rgb(0 0 0 / 0);
   width: 100%;
   box-sizing: border-box;
 }
 
 .header-inner {
-  display: flex !important;
-  justify-content: flex-start !important;
-  align-items: center !important;
-  max-width: 960px !important;
-  margin: 0 auto !important;
-  padding: 0 20px !important;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 960px;
+  width: 100%;
 }
 
 .logo {
   font-family: 'Playfair Display', serif;
   font-size: 1.8rem;
   color: #000000;
-  margin-right: 100px !important;
+  margin: 0;
 }
-
 .logo a {
   text-decoration: none;
   color: inherit;
   font-weight: bold;
 }
+.logo a:hover { text-decoration: underline; color: #000000; }
 
-.logo a:hover {
-  text-decoration: underline;
-  color: #000000;
-}
-
-/* === 導覽列樣式 === */
-nav {
-  position: relative;
-}
-
+/* === 導覽列 === */
+nav { position: relative; }
 .menu {
   list-style: none;
   display: flex;
@@ -77,7 +70,6 @@ nav {
   margin: 0;
   padding: 0;
 }
-
 .menu li a {
   text-decoration: none;
   color: #000000;
@@ -85,45 +77,25 @@ nav {
   font-family: 'Noto Serif TC', serif;
   transition: color 0.3s ease;
 }
+.menu li a:hover { color: #9f9f9f; }
 
-.menu li a:hover {
-  color: #9f9f9f;
-}
-
-/* 手機漢堡條 */
 .menu-toggle {
   display: none;
   font-size: 1.8rem;
   cursor: pointer;
   color: #000000;
+  background: transparent;
+  border: 0;
+  padding: 6px 10px;
 }
 
-/* === 回到首頁 / 報名按鈕 === */
-.back-link {
-  display: none;
-  margin-top: 30px;
-  padding: 8px 14px;
-  background-color: #ffffff;
-  color: #000000;
-  border-radius: 6px;
-  font-weight: 600;
-  text-decoration: none;
-  transition: background-color 0.3s ease, color 0.3s ease;
-}
-
-.back-link:hover {
-  background-color: #b0acac;
-  color: #000000;
-}
-
-/* === 課程區塊卡片 === */
+/* === 首頁課程卡片 === */
 .course-grid {
   display: flex;
   flex-wrap: wrap;
   gap: 20px;
   justify-content: center;
 }
-
 .course-card {
   display: block;
   text-decoration: none;
@@ -137,37 +109,29 @@ nav {
   transition: transform 0.3s ease, box-shadow 0.3s ease;
   color: inherit;
 }
-
 .course-card:hover {
   transform: translateY(-5px);
   box-shadow: 0 4px 12px rgba(0,0,0,0.15);
 }
-
 .course-card img {
   width: 100%;
   height: 200px;
   object-fit: cover;
   border-radius: 8px;
 }
-
 .course-card h3 {
   font-size: 1.2rem;
   margin: 12px 0 8px;
   color: #000000;
 }
-
 .course-card p {
   font-size: 0.95rem;
   color: #df1c1c;
   margin-bottom: 0;
 }
 
-/* === 更多課程按鈕 === */
-.more-center {
-  text-align: center;
-  margin-top: 20px;
-}
-
+/* === 按鈕 === */
+.more-center { text-align: center; margin-top: 20px; }
 .more-button {
   background: linear-gradient(to right, #c4bbbb, #c4bbbb);
   color: white;
@@ -176,39 +140,25 @@ nav {
   border-radius: 30px;
   text-decoration: none;
   transition: background 0.3s ease;
+  display: inline-block;
+  margin: 0 8px;
 }
+.more-button:hover { background: linear-gradient(to right, #c7c4c4, #c7c4c4); }
 
-.more-button:hover {
-  background: linear-gradient(to right, #c7c4c4, #c7c4c4);
+.form-button {
+  display: inline-block;
+  background: #c4bbbb;
+  color: white;
+  padding: 12px 25px;
+  border-radius: 30px;
+  font-weight: 700;
+  text-decoration: none;
+  margin: 0 8px;
+  transition: background-color 0.3s ease;
 }
+.form-button:hover { background: #797979; }
 
-/* === 手機版漢堡選單 RWD === */
-@media (max-width: 768px) {
-  .menu {
-    display: none;
-    flex-direction: column;
-    background: #fcf7f7;
-    position: absolute;
-    top: 50px;
-    right: 0;
-    width: 180px;
-    border-radius: 8px;
-    padding: 10px;
-    box-shadow: 0 4px 8px rgb(0 0 0 / 0.15);
-  }
-
-  .menu.active {
-    display: flex;
-  }
-
-  .menu-toggle {
-    display: block;
-  }
-}
-
-
-
-/* === 首頁 banner 圖片 === */
+/* === 首頁圖片與文字 === */
 .course-image {
   width: 100%;
   max-height: 350px;
@@ -216,8 +166,6 @@ nav {
   border-radius: 10px;
   margin: 20px 0;
 }
-
-/* === 首頁簡介段落 === */
 .course-description {
   font-size: 1.15rem;
   line-height: 1.6;
@@ -226,13 +174,12 @@ nav {
   text-align: center;
 }
 
-/* === 各區塊標題統一樣式 === */
+/* === 區塊標題 === */
 .section {
   margin-bottom: 50px;
   font-family: 'Noto Serif TC', serif;
   color: #000000;
 }
-
 .section h2 {
   font-size: 1.6rem;
   margin-bottom: 15px;
@@ -240,7 +187,7 @@ nav {
   padding-bottom: 5px;
 }
 
-/* === 課程內頁排版 === */
+/* === 課程總覽頁卡片 === */
 .course-buttons {
   display: flex;
   flex-wrap: wrap;
@@ -248,7 +195,6 @@ nav {
   justify-content: center;
   margin-top: 20px;
 }
-
 .course-buttons a {
   display: flex;
   flex-direction: column;
@@ -261,12 +207,10 @@ nav {
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
-
 .course-buttons a:hover {
   transform: translateY(-4px);
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
 }
-
 .course-buttons a img {
   width: 100%;
   height: 120px;
@@ -274,7 +218,6 @@ nav {
   border-radius: 8px;
   margin-bottom: 10px;
 }
-
 .course-buttons a span {
   font-family: 'Noto Serif TC', serif;
   font-weight: 600;
@@ -283,24 +226,22 @@ nav {
   text-align: center;
 }
 
+/* === 課程內頁排版 === */
 .course-layout {
   display: flex;
   gap: 30px;
   align-items: flex-start;
   flex-wrap: wrap;
 }
-
 .course-img {
   flex: 1 1 300px;
   max-width: 400px;
 }
-
 .course-img img {
   width: 100%;
   border-radius: 10px;
   box-shadow: 0 2px 8px rgba(0,0,0,0.15);
 }
-
 .course-text {
   flex: 1 1 300px;
   font-size: 1.05rem;
@@ -308,37 +249,13 @@ nav {
   line-height: 1.7;
 }
 
-@media (max-width: 768px) {
-  .course-layout {
-    flex-direction: column;
-  }
-}
-
-/* === 線上報名按鈕 === */
-.form-button {
-  display: inline-block;
-  background: #c4bbbb;
-  color: white;
-  padding: 12px 25px;
-  border-radius: 30px;
-  font-weight: 700;
-  text-decoration: none;
-  margin: 0 auto;
-  transition: background-color 0.3s ease;
-}
-
-.form-button:hover {
-  background: #797979;
-}
-
-/* === 學員作品集樣式 === */
+/* === 作品集 === */
 .gallery {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
   gap: 20px;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
   margin-top: 24px;
 }
-
 .gallery img {
   width: 100%;
   height: 100%;
@@ -348,25 +265,18 @@ nav {
   transition: transform 0.3s ease;
   cursor: pointer;
 }
+.gallery img:hover { transform: scale(1.05); }
 
-.gallery img:hover {
-  transform: scale(1.05);
-}
-
-/* === Lightbox 放大效果 === */
+/* Lightbox */
 .lightbox-overlay {
   position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
+  inset: 0;
   background: rgba(0,0,0,0.8);
   display: none;
   justify-content: center;
   align-items: center;
   z-index: 2000;
 }
-
 .lightbox-overlay img {
   max-width: 90%;
   max-height: 90%;
@@ -374,20 +284,12 @@ nav {
   box-shadow: 0 0 20px rgba(255,255,255,0.4);
   animation: fadeIn 0.3s ease;
 }
-
-@media (max-width: 768px) {
-  .lightbox-overlay img {
-    max-width: 90vw;
-    max-height: 70vh;
-  }
-}
-
 @keyframes fadeIn {
   from { opacity: 0; transform: scale(0.95); }
   to { opacity: 1; transform: scale(1); }
 }
 
-/* === 頁尾樣式 === */
+/* === Footer === */
 .footer-content {
   max-width: 960px;
   margin: 0 auto;
@@ -397,15 +299,6 @@ nav {
   align-items: center;
   gap: 12px;
 }
-
-.site-footer {
-  background-color: #fffaf5;
-  padding: 30px 20px;
-  text-align: center;
-  font-size: 14px;
-  color: #4a4a4a;
-}
-
 .social-icons a img {
   width: 28px;
   height: 28px;
@@ -413,227 +306,101 @@ nav {
   vertical-align: middle;
   transition: transform 0.2s ease;
 }
-
-.social-icons a img:hover {
-  transform: scale(1.1);
-}
-
-.contact-info p {
-  margin: 2px 0;
-}
-
+.social-icons a img:hover { transform: scale(1.1); }
+.contact-info p { margin: 2px 0; }
 @media (min-width: 768px) {
   .footer-content {
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
   }
+  .contact-info { text-align: left; }
+  .copyright { text-align: right; margin-top: 0; }
+}
 
-  .contact-info {
-    text-align: left;
+/* === 手機優化（<=768px） === */
+@media (max-width: 768px) {
+  .container { max-width: 100%; padding: 0 16px 32px; }
+  h1 { font-size: clamp(22px, 5vw, 28px); }
+  h2 { font-size: clamp(18px, 4.2vw, 24px); }
+  p, li, a, button, input, label { font-size: clamp(14px, 3.8vw, 18px); line-height: 1.6; }
+
+  .header { padding: 10px 16px; }
+  .logo { font-size: 1.4rem; }
+  .menu-toggle { display: inline-block; }
+
+  /* 手機抽屜選單 */
+  .menu {
+    position: fixed;
+    inset: 0;
+    background: rgba(255,255,255,0.98);
+    padding: 72px 24px 24px;
+    display: none;
+    flex-direction: column;
+    gap: 12px;
+    overflow-y: auto;
+    z-index: 1100;
+  }
+  .menu.open { display: flex; }
+  .menu li { border-bottom: 1px solid #eee; }
+  .menu a { display: block; padding: 14px 4px; text-decoration: none; }
+  body.nav-open { height: 100vh; overflow: hidden; position: fixed; width: 100%; }
+
+  /* ✅ 手機首頁：課程卡片 2 欄，僅顯示 4 個 */
+  section#course .course-grid {
+    display: grid !important;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+  }
+  section#course .course-grid > a.course-card {
+    width: 100% !important;
+    padding: 10px;
+  }
+  section#course .course-grid > a.course-card img {
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    object-fit: cover;
+  }
+  section#course .course-grid > a.course-card:nth-child(n+5) {
+    display: none;
   }
 
-  .copyright {
-    text-align: right;
-    margin-top: 0;
+  /* ✅ 手機課程總覽：2 欄，顯示全部 */
+  #class .course-buttons {
+    display: grid !important;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
   }
-}
-
-/* === 社群圖示連結 === */
-.links.icon-links {
-  display: flex;
-  gap: 15px;
-  justify-content: center;
-  margin: 20px 0 40px;
-}
-
-.links.icon-links a img {
-  width: 30px;
-  height: 30px;
-  filter: drop-shadow(0 0 1px rgba(0,0,0,0.2));
-  transition: filter 0.3s ease;
-}
-
-.links.icon-links a:hover img {
-  filter: drop-shadow(0 0 5px #d46a6a);
-}
-
-/* === 按鈕水平排版 === */
-.button-row {
-  display: flex;
-  justify-content: center;
-  gap: 20px;
-  margin: 30px 0;
-  flex-wrap: wrap;
-}
-
-.button-row a {
-  min-width: 180px;
-  text-align: center;
-}
-
-/* =========================
-   手機優化（<= 768px）
-   ========================= */
-   @media (max-width: 768px) {
-    /* 1) 版心與排版密度 */
-    .container {
-      max-width: 100%;
-      padding: 0 16px 32px; /* 手機左右留白更窄，視覺更集中 */
-    }
-  
-    /* 2) 字體大小使用 clamp：在不同螢幕寬度間自動縮放 */
-    h1 { font-size: clamp(22px, 5vw, 28px); }
-    h2 { font-size: clamp(18px, 4.2vw, 24px); }
-    p, li, a, button, input, label { font-size: clamp(14px, 3.8vw, 18px); line-height: 1.6; }
-  
-    /* 3) Header：縮小高度、確保漢堡選單可點 */
-    .header {
-      padding: 10px 16px;
-    }
-    .logo {
-      font-size: 1.4rem; /* 手機上 Logo 稍微縮小 */
-    }
-    .menu-toggle {
-      display: block;                /* 手機顯示漢堡 */
-      font-size: 28px;               /* 點擊區放大 */
-      line-height: 1;
-      padding: 8px;                  /* 增加可點擊面積 */
-      -webkit-tap-highlight-color: transparent;
-    }
-  
-    /* 4) 導覽選單：由水平改為全螢幕抽屜式 */
-    .menu {
-      position: fixed;
-      inset: 0;                      /* top/right/bottom/left: 0 */
-      background: rgba(255,255,255,0.98);
-      padding: 72px 24px 24px;
-      display: none;                 /* 預設關閉，由 .menu.open 打開 */
-      flex-direction: column;
-      gap: 12px;
-      overflow-y: auto;
-      z-index: 999;                  /* 蓋過其他元素 */
-    }
-    .menu.open { display: flex; }
-    .menu li { border-bottom: 1px solid #eee; }
-    .menu a {
-      display: block;
-      padding: 14px 4px;
-      text-decoration: none;
-    }
-  
-    /* 5) 打開選單時禁止背景捲動（搭配 body.nav-open）*/
-    body.nav-open {
-      height: 100vh;
-      overflow: hidden;
-      position: fixed;
-      width: 100%;
-    }
-  
-    /* 6) Hero 區塊：縮短高度、按鈕垂直排列 */
-    .hero {
-      padding: 48px 0 32px;
-      text-align: center;
-    }
-    .hero .actions {
-      display: grid;
-      gap: 12px;
-      grid-auto-flow: row;
-      justify-items: center;
-    }
-    .hero .actions .btn {
-      width: 100%;
-      max-width: 320px;              /* 手機按鈕寬、好點 */
-      padding: 14px 16px;
-      border-radius: 12px;
-    }
-  
-    /* 7) 卡片（課程 / 作品）由多欄改單欄，增大可點區 */
-    .card-grid {
-      display: grid;
-      grid-template-columns: 1fr;    /* 單欄 */
-      gap: 16px;
-    }
-    .card {
-      border-radius: 14px;
-      overflow: hidden;
-      /* 增加陰影在手機更清楚卡片分界 */
-      box-shadow: 0 6px 18px rgba(0,0,0,0.06);
-    }
-    .card img {
-      width: 100%;
-      height: auto;
-      display: block;
-    }
-    .card .card-body { padding: 14px; }
-  
-    /* 8) 圖片與媒體：避免超出容器、提高載入穩定性 */
-    img, video {
-      max-width: 100%;
-      height: auto;
-    }
-  
-    /* 9) 表單元素：避免 iOS 自動放大（使用 16px 以上字體） */
-    input, textarea, select {
-      font-size: 16px;
-      padding: 12px 14px;
-      border-radius: 10px;
-      width: 100%;
-      box-sizing: border-box;
-    }
-  
-    /* 10) Footer：改為堆疊，社群圖示好點擊 */
-    .footer {
-      padding: 20px 16px 32px;
-      text-align: center;
-    }
-    .footer .social {
-      display: flex;
-      justify-content: center;
-      gap: 14px;
-      margin: 10px 0 0;
-    }
-    .footer .social a {
-      display: inline-flex;
-      width: 44px; height: 44px;     /* 44px 是良好觸控目標 */
-      align-items: center; justify-content: center;
-      border-radius: 50%;
-      border: 1px solid #eee;
-    }
-  
-    /* 11) Lightbox / Modal：填滿寬度、保留關閉鈕空間 */
-    .lightbox img {
-      max-height: calc(100vh - 120px);
-      width: auto;
-    }
-  
-    /* 12) 動畫在手機弱化，避免掉幀（若你有用到） */
-    .animate, [data-animate] {
-      transition-duration: 280ms !important;
-    }
-    .heavy-anim {
-      animation: none !important;
-    }
+  #class .course-buttons a {
+    width: 100% !important;
+    padding: 10px;
   }
-  
-  /* iPhone 安全區（如果 header/footer 貼齊邊緣） */
-  @supports(padding:max(0px)) {
-    .header { padding-top: max(10px, env(safe-area-inset-top)); }
-    .menu   { padding-top: max(72px, env(safe-area-inset-top)); }
-    .footer { padding-bottom: max(32px, env(safe-area-inset-bottom)); }
+  #class .course-buttons a img {
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    object-fit: cover;
+    margin-bottom: 8px;
   }
-  
-  /* === 作品集欄數：手機 2 欄、平板 3 欄、桌機最多 4 欄 === */
-.gallery {
-  display: grid;
-  gap: 20px;
-  grid-template-columns: repeat(2, 1fr);     /* 手機：2 欄 */
+  #class .course-buttons a span {
+    font-size: 0.95rem;
+    line-height: 1.4;
+  }
+
+  /* 作品集：手機 2 欄 */
+  .gallery { grid-template-columns: repeat(2, 1fr); }
 }
 
-@media (min-width: 768px) {
-  .gallery { grid-template-columns: repeat(3, 1fr); } /* 平板：3 欄 */
+/* 平板以上 3 欄、大桌機 4 欄 */
+@media (min-width: 768px) and (max-width: 1199px) {
+  .gallery { grid-template-columns: repeat(3, 1fr); }
 }
-
 @media (min-width: 1200px) {
-  .gallery { grid-template-columns: repeat(4, 1fr); } /* 大桌機：4 欄 */
+  .gallery { grid-template-columns: repeat(4, 1fr); }
+}
+
+/* iPhone 安全區 */
+@supports(padding:max(0px)) {
+  .header { padding-top: max(10px, env(safe-area-inset-top)); }
+  .menu   { padding-top: max(72px, env(safe-area-inset-top)); }
+  .site-footer { padding-bottom: max(32px, env(safe-area-inset-bottom)); }
 }

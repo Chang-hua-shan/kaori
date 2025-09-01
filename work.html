@@ -86,60 +86,6 @@
     <img src="" alt="放大圖片" id="lightbox-img" />
   </div>
 
-  <!-- JS（與 index / class 一致） -->
-  <script>
-    /* === Lightbox === */
-    const lightbox = document.getElementById('lightbox');
-    const lightboxImg = document.getElementById('lightbox-img');
-    const links = document.querySelectorAll('.lightbox-link');
-
-    links.forEach(link => {
-      link.addEventListener('click', e => {
-        e.preventDefault();
-        lightboxImg.src = link.getAttribute('href');
-        lightbox.style.display = 'flex';
-        lightbox.setAttribute('aria-hidden', 'false');
-      });
-    });
-
-    lightbox.addEventListener('click', () => {
-      lightbox.style.display = 'none';
-      lightbox.setAttribute('aria-hidden', 'true');
-    });
-
-    /* === 抽屜式手機選單 === */
-    const toggle = document.querySelector('.menu-toggle');
-    const menu = document.getElementById('site-menu');
-
-    function openMenu() {
-      menu.classList.add('open');
-      document.body.classList.add('nav-open');
-      toggle.setAttribute('aria-expanded', 'true');
-    }
-    function closeMenu() {
-      menu.classList.remove('open');
-      document.body.classList.remove('nav-open');
-      toggle.setAttribute('aria-expanded', 'false');
-    }
-    function toggleMenu(e) {
-      e?.stopPropagation();
-      menu.classList.contains('open') ? closeMenu() : openMenu();
-    }
-
-    if (toggle && menu) {
-      toggle.addEventListener('click', toggleMenu);
-      toggle.addEventListener('keydown', (e) => {
-        if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); toggleMenu(e); }
-        if (e.key === 'Escape') closeMenu();
-      });
-      menu.addEventListener('click', (e) => { if (e.target.closest('a')) closeMenu(); });
-      document.addEventListener('click', (e) => {
-        if (!menu.contains(e.target) && !toggle.contains(e.target)) closeMenu();
-      });
-      document.addEventListener('keydown', (e) => { if (e.key === 'Escape') closeMenu(); });
-    }
-
-    document.addEventListener('touchstart', ()=>{}, {passive: true});
-  </script>
+  <script src="script.js"></script>
 </body>
 </html>

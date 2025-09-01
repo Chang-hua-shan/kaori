@@ -85,45 +85,6 @@
     </div>
   </footer>
 
-  <!-- JS（與 index 一致的選單邏輯） -->
-  <script>
-    const toggle = document.querySelector('.menu-toggle');
-    const menu = document.getElementById('site-menu');
-
-    function openMenu() {
-      menu.classList.add('open');
-      document.body.classList.add('nav-open');
-      toggle.setAttribute('aria-expanded', 'true');
-    }
-    function closeMenu() {
-      menu.classList.remove('open');
-      document.body.classList.remove('nav-open');
-      toggle.setAttribute('aria-expanded', 'false');
-    }
-    function toggleMenu(e) {
-      e?.stopPropagation();
-      menu.classList.contains('open') ? closeMenu() : openMenu();
-    }
-
-    if (toggle && menu) {
-      toggle.addEventListener('click', toggleMenu);
-      toggle.addEventListener('keydown', (e) => {
-        if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); toggleMenu(e); }
-        if (e.key === 'Escape') closeMenu();
-      });
-      menu.addEventListener('click', (e) => {
-        if (e.target.closest('a')) closeMenu();
-      });
-      document.addEventListener('click', (e) => {
-        if (!menu.contains(e.target) && !toggle.contains(e.target)) closeMenu();
-      });
-      document.addEventListener('keydown', (e) => {
-        if (e.key === 'Escape') closeMenu();
-      });
-    }
-
-    // iOS 點擊高亮處理
-    document.addEventListener('touchstart', ()=>{}, {passive: true});
-  </script>
+  <script src="script.js"></script>
 </body>
 </html>
