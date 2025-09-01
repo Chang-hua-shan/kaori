@@ -8,6 +8,7 @@ html, body {
   background: #ffffff;
   color: #000000;
 }
+
 .container {
   flex: 1;
   max-width: 900px;
@@ -15,17 +16,30 @@ html, body {
   padding: 0 20px 40px;
 }
 
-/* === Header 精簡版 === */
+/* footer 保持在底部 */
+.site-footer {
+  background-color: #fffaf5;
+  padding: 30px 20px;
+  text-align: center;
+  font-size: 14px;
+  color: #4a4a4a;
+}
+
+/* === Header 導覽列 === */
 .header {
   display: flex;
   justify-content: center;
   align-items: center;
   background: #fffaf5;
-  padding: 6px 16px;   /* 緊湊頂部 */
+  padding: 10px 20px;
   position: sticky;
   top: 0;
   z-index: 1000;
+  box-shadow: 0 2px 5px rgb(0 0 0 / 0);
+  width: 100%;
+  box-sizing: border-box;
 }
+
 .header-inner {
   display: flex;
   justify-content: space-between;
@@ -33,22 +47,26 @@ html, body {
   max-width: 960px;
   width: 100%;
 }
+
 .logo {
   font-family: 'Playfair Display', serif;
-  font-size: 1.6rem;   /* 縮小高度 */
+  font-size: 1.8rem;
   color: #000000;
   margin: 0;
-  line-height: 1;
 }
-.logo a { color: inherit; text-decoration: none; font-weight: bold; }
-.logo a:hover { text-decoration: underline; }
+.logo a {
+  text-decoration: none;
+  color: inherit;
+  font-weight: bold;
+}
+.logo a:hover { text-decoration: underline; color: #000000; }
 
-/* === 導覽列（桌機） === */
+/* === 導覽列 === */
 nav { position: relative; }
 .menu {
   list-style: none;
   display: flex;
-  gap: 16px;
+  gap: 20px;
   margin: 0;
   padding: 0;
 }
@@ -57,10 +75,10 @@ nav { position: relative; }
   color: #000000;
   font-weight: 600;
   font-family: 'Noto Serif TC', serif;
-  padding: 4px 6px;
   transition: color 0.3s ease;
 }
 .menu li a:hover { color: #9f9f9f; }
+
 .menu-toggle {
   display: none;
   font-size: 1.8rem;
@@ -106,6 +124,68 @@ nav { position: relative; }
   margin: 12px 0 8px;
   color: #000000;
 }
+.course-card p {
+  font-size: 0.95rem;
+  color: #df1c1c;
+  margin-bottom: 0;
+}
+
+/* === 按鈕 === */
+.more-center { text-align: center; margin-top: 20px; }
+.more-button {
+  background: linear-gradient(to right, #c4bbbb, #c4bbbb);
+  color: white;
+  font-weight: 600;
+  padding: 10px 20px;
+  border-radius: 30px;
+  text-decoration: none;
+  transition: background 0.3s ease;
+  display: inline-block;
+  margin: 0 8px;
+}
+.more-button:hover { background: linear-gradient(to right, #c7c4c4, #c7c4c4); }
+
+.form-button {
+  display: inline-block;
+  background: #c4bbbb;
+  color: white;
+  padding: 12px 25px;
+  border-radius: 30px;
+  font-weight: 700;
+  text-decoration: none;
+  margin: 0 8px;
+  transition: background-color 0.3s ease;
+}
+.form-button:hover { background: #797979; }
+
+/* === 首頁圖片與文字 === */
+.course-image {
+  width: 100%;
+  max-height: 350px;
+  object-fit: cover;
+  border-radius: 10px;
+  margin: 20px 0;
+}
+.course-description {
+  font-size: 1.15rem;
+  line-height: 1.6;
+  color: #000000;
+  margin-bottom: 30px;
+  text-align: center;
+}
+
+/* === 區塊標題 === */
+.section {
+  margin-bottom: 50px;
+  font-family: 'Noto Serif TC', serif;
+  color: #000000;
+}
+.section h2 {
+  font-size: 1.6rem;
+  margin-bottom: 15px;
+  border-bottom: 2px solid #c4bbbb;
+  padding-bottom: 5px;
+}
 
 /* === 課程總覽頁卡片 === */
 .course-buttons {
@@ -129,7 +209,7 @@ nav { position: relative; }
 }
 .course-buttons a:hover {
   transform: translateY(-4px);
-  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
 }
 .course-buttons a img {
   width: 100%;
@@ -147,10 +227,27 @@ nav { position: relative; }
 }
 
 /* === 課程內頁排版 === */
-.course-layout { display: flex; gap: 30px; align-items: flex-start; flex-wrap: wrap; }
-.course-img { flex: 1 1 300px; max-width: 400px; }
-.course-img img { width: 100%; border-radius: 10px; box-shadow: 0 2px 8px rgba(0,0,0,0.15); }
-.course-text { flex: 1 1 300px; font-size: 1.05rem; color: #000000; line-height: 1.7; }
+.course-layout {
+  display: flex;
+  gap: 30px;
+  align-items: flex-start;
+  flex-wrap: wrap;
+}
+.course-img {
+  flex: 1 1 300px;
+  max-width: 400px;
+}
+.course-img img {
+  width: 100%;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+}
+.course-text {
+  flex: 1 1 300px;
+  font-size: 1.05rem;
+  color: #000000;
+  line-height: 1.7;
+}
 
 /* === 作品集 === */
 .gallery {
@@ -170,7 +267,7 @@ nav { position: relative; }
 }
 .gallery img:hover { transform: scale(1.05); }
 
-/* === Lightbox === */
+/* Lightbox */
 .lightbox-overlay {
   position: fixed;
   inset: 0;
@@ -187,16 +284,12 @@ nav { position: relative; }
   box-shadow: 0 0 20px rgba(255,255,255,0.4);
   animation: fadeIn 0.3s ease;
 }
-@keyframes fadeIn { from {opacity: 0; transform: scale(0.95);} to {opacity:1; transform: scale(1);} }
+@keyframes fadeIn {
+  from { opacity: 0; transform: scale(0.95); }
+  to { opacity: 1; transform: scale(1); }
+}
 
 /* === Footer === */
-.site-footer {
-  background-color: #fffaf5;
-  padding: 30px 20px;
-  text-align: center;
-  font-size: 14px;
-  color: #4a4a4a;
-}
 .footer-content {
   max-width: 960px;
   margin: 0 auto;
@@ -207,47 +300,75 @@ nav { position: relative; }
   gap: 12px;
 }
 .social-icons a img {
-  width: 28px; height: 28px; margin: 0 8px; vertical-align: middle; transition: transform 0.2s ease;
+  width: 28px;
+  height: 28px;
+  margin: 0 8px;
+  vertical-align: middle;
+  transition: transform 0.2s ease;
 }
 .social-icons a img:hover { transform: scale(1.1); }
+.contact-info p { margin: 2px 0; }
 @media (min-width: 768px) {
-  .footer-content { flex-direction: row; justify-content: space-between; align-items: center; }
+  .footer-content {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .contact-info { text-align: left; }
+  .copyright { text-align: right; margin-top: 0; }
 }
 
 /* === 手機優化（<=768px） === */
 @media (max-width: 768px) {
   .container { max-width: 100%; padding: 0 16px 32px; }
-  .header { padding: 6px 12px; }
-  .logo { font-size: 1.4rem; }
+  h1 { font-size: clamp(22px, 5vw, 28px); }
+  h2 { font-size: clamp(18px, 4.2vw, 24px); }
+  p, li, a, button, input, label { font-size: clamp(14px, 3.8vw, 18px); line-height: 1.6; }
 
-  /* 顯示漢堡（右側） */
+  .header { padding: 10px 16px; }
+  .logo { font-size: 1.4rem; }
   .menu-toggle { display: inline-block; }
 
-  /* ✅ 右側抽屜選單（不覆蓋全螢幕） */
+  /* 手機抽屜選單（右側滑出） */
+@media (max-width: 768px) {
   .menu {
     position: fixed;
     top: 0;
-    right: -260px;              /* 初始藏在右側外 */
+    right: -260px;        /* 初始在畫面外 */
     height: 100%;
-    width: 260px;               /* 抽屜寬度 */
+    width: 260px;         /* 抽屜寬度，可自行調整 */
     background: #ffffff;
-    display: flex;
     flex-direction: column;
     gap: 12px;
-    padding: 72px 16px 16px;    /* 預留 header 高度 */
+    padding: 72px 16px 16px;
     box-shadow: -2px 0 10px rgba(0,0,0,0.12);
     transition: right 0.3s ease;
-    z-index: 1100;              /* 高於 header */
+    z-index: 1100;
+    display: flex;
   }
-  .menu.open { right: 0; }      /* 開啟時滑入 */
+  .menu.open {
+    right: 0;            /* 打開時滑入畫面 */
+  }
 
-  .menu li { border-bottom: 1px solid #eee; }
-  .menu a { display: block; padding: 12px 4px; text-decoration: none; }
+  .menu li {
+    border-bottom: 1px solid #eee;
+  }
+  .menu a {
+    display: block;
+    padding: 14px 4px;
+    text-decoration: none;
+  }
 
-  /* 避免開單時背景滾動（可保留） */
-  body.nav-open { height: 100vh; overflow: hidden; position: fixed; width: 100%; }
+  body.nav-open {
+    height: 100vh;
+    overflow: hidden;
+    position: fixed;
+    width: 100%;
+  }
+}
 
-  /* ✅ 首頁課程：2 欄、僅顯示前 4 張 */
+
+  /* ✅ 手機首頁：課程卡片 2 欄，僅顯示 4 個 */
   section#course .course-grid {
     display: grid !important;
     grid-template-columns: repeat(2, 1fr);
@@ -262,35 +383,46 @@ nav { position: relative; }
     aspect-ratio: 1 / 1;
     object-fit: cover;
   }
-  section#course .course-grid > a.course-card:nth-child(n+5) { display: none; }
+  section#course .course-grid > a.course-card:nth-child(n+5) {
+    display: none;
+  }
 
-  /* ✅ 課程總覽：2 欄、全顯示 */
+  /* ✅ 手機課程總覽：2 欄，顯示全部 */
   #class .course-buttons {
     display: grid !important;
     grid-template-columns: repeat(2, 1fr);
     gap: 12px;
   }
-  #class .course-buttons a { width: 100% !important; padding: 10px; }
+  #class .course-buttons a {
+    width: 100% !important;
+    padding: 10px;
+  }
   #class .course-buttons a img {
     width: 100%;
     aspect-ratio: 1 / 1;
     object-fit: cover;
     margin-bottom: 8px;
   }
-  #class .course-buttons a span { font-size: 0.95rem; line-height: 1.4; }
+  #class .course-buttons a span {
+    font-size: 0.95rem;
+    line-height: 1.4;
+  }
 
-  /* 作品集（手機 2 欄） */
+  /* 作品集：手機 2 欄 */
   .gallery { grid-template-columns: repeat(2, 1fr); }
 }
 
-/* 作品集：平板 3 欄、大桌機 4 欄 */
-@media (min-width: 768px) and (max-width: 1199px) { .gallery { grid-template-columns: repeat(3, 1fr); } }
-@media (min-width: 1200px) { .gallery { grid-template-columns: repeat(4, 1fr); } }
+/* 平板以上 3 欄、大桌機 4 欄 */
+@media (min-width: 768px) and (max-width: 1199px) {
+  .gallery { grid-template-columns: repeat(3, 1fr); }
+}
+@media (min-width: 1200px) {
+  .gallery { grid-template-columns: repeat(4, 1fr); }
+}
 
-/* === iPhone 安全區 === */
+/* iPhone 安全區 */
 @supports(padding:max(0px)) {
-  .header { padding-top: max(6px, env(safe-area-inset-top)); }
-  /* 抽屜選單右側安全區 */
-  .menu { padding-right: max(16px, env(safe-area-inset-right)); }
+  .header { padding-top: max(10px, env(safe-area-inset-top)); }
+  .menu   { padding-top: max(72px, env(safe-area-inset-top)); }
   .site-footer { padding-bottom: max(32px, env(safe-area-inset-bottom)); }
 }
